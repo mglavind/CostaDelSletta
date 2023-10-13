@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Godkendelser for {{ bruger.username }}</h2>
+<ul>
+    <table class="table">
+      <tr>
+          <th>Navn</th>
+          <th>Status</th>
+      </tr>
+      {% for godkendelse in godkendelser %}
+      <tr>
+        <td>{{ godkendelse.Opgave }}</td>
+        <td>{{ godkendelse.Status }}</td>
+      </tr>
+      {% endfor %}
+  </table>
+
+</ul>
+{% endblock %}

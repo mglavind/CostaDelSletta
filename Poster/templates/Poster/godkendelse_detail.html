@@ -1,0 +1,24 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'Poster_Godkendelse_list' %}">
+    Godkendelse Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr>
+        <td>last_updated</td>
+        <td>{{ object.last_updated }}</td>
+    </tr>
+    <tr><td>created</td><td>{{ object.created }}</td></tr>
+    <tr><td>Status</td><td>{{ object.Status }}</td></tr>
+    <tr><td>Hold</td><td>{{ object.Hold }}</td></tr>
+    <tr><td>Opgave</td><td>{{ object.Opgave }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}
