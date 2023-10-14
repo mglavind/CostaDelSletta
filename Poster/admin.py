@@ -53,6 +53,7 @@ class HoldAdmin(admin.ModelAdmin):
     form = HoldAdminForm
     list_display = [
         "name",
+        "gruppe_name",
         "role",
         "description",
     ]

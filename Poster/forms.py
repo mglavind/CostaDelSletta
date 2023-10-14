@@ -31,7 +31,8 @@ class HoldForm(forms.ModelForm):
     class Meta:
         model = models.Hold
         fields = [
-            "role",
             "name",
+            "gruppe_name",
+            "role",
             "description",
         ]

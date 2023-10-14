@@ -40,7 +40,7 @@ class Opgave(models.Model):
     # Fields
     name = models.CharField(max_length=30)
     last_updated = models.DateTimeField(auto_now=True, editable=False)
-    description = models.TextField(max_length=100)
+    description = models.TextField(max_length=100, blank=True)
     created = models.DateTimeField(auto_now_add=True, editable=False)
 
     class Meta:
@@ -60,9 +60,10 @@ class Hold(models.Model):
 
     # Fields
     name = models.CharField(max_length=30)
+    gruppe_name = models.CharField(max_length=30, blank=True)
     last_updated = models.DateTimeField(auto_now=True, editable=False)
-    role = models.TextField(max_length=100)
-    description = models.TextField(max_length=100)
+    role = models.TextField(max_length=100, blank=True)
+    description = models.TextField(max_length=100, blank=True)
     created = models.DateTimeField(auto_now_add=True, editable=False)
 
     class Meta:
