@@ -12,6 +12,7 @@ from . import models
 import csv
 
 
+
 class GodkendelseAdminForm(forms.ModelForm):
 
     class Meta:
