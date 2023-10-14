@@ -26,3 +26,12 @@ class GodkendelseForm(forms.ModelForm):
         super(GodkendelseForm, self).__init__(*args, **kwargs)
         self.fields["Opgave"].queryset = Opgave.objects.all()
         self.fields["Hold"].queryset = Bruger.objects.all()
+
+class HoldForm(forms.ModelForm):
+    class Meta:
+        model = models.Hold
+        fields = [
+            "role",
+            "name",
+            "description",
+        ]

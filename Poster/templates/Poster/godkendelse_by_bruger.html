@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>Godkendelser for {{ bruger.username }}</h2>
+<h2>Godkendelser for {{ hold }}</h2>
 <ul>
     <table class="table">
       <tr>
@@ -10,7 +10,7 @@
       {% for godkendelse in godkendelser %}
       <tr>
         <td>{{ godkendelse.Opgave }}</td>
-        <td>{{ godkendelse.Status }}</td>
+        <td>{{ godkendelse.status }}</td>
       </tr>
       {% endfor %}
   </table>

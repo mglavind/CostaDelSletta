@@ -18,3 +18,10 @@ class GodkendelseViewSet(viewsets.ModelViewSet):
     queryset = models.Godkendelse.objects.all()
     serializer_class = serializers.GodkendelseSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+class HoldViewSet(viewsets.ModelViewSet):
+    """ViewSet for the Hold class"""
+
+    queryset = models.Hold.objects.all()
+    serializer_class = serializers.HoldSerializer
+    permission_classes = [permissions.IsAuthenticated]

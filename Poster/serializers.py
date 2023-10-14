@@ -25,3 +25,15 @@ class GodkendelseSerializer(serializers.ModelSerializer):
             "Hold",
             "Opgave",
         ]
+
+class HoldSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.Hold
+        fields = [
+            "role",
+            "last_updated",
+            "name",
+            "created",
+            "description",
+        ]

@@ -42,6 +42,27 @@ class OpgaveAdmin(admin.ModelAdmin):
         "last_updated",
     ]
 
+class HoldAdminForm(forms.ModelForm):
+
+    class Meta:
+        model = models.Hold
+        fields = "__all__"
+
+
+class HoldAdmin(admin.ModelAdmin):
+    form = HoldAdminForm
+    list_display = [
+        "name",
+        "role",
+        "description",
+    ]
+    readonly_fields = [
+        "last_updated",
+        "created",
+    ]
+
+
 
 admin.site.register(models.Godkendelse, GodkendelseAdmin)
 admin.site.register(models.Opgave, OpgaveAdmin)
+admin.site.register(models.Hold, HoldAdmin)

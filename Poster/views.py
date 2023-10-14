@@ -62,6 +62,31 @@ class GodkendelseDeleteView(generic.DeleteView):
     success_url = reverse_lazy("Poster_Godkendelse_list")
 
 
+class HoldListView(generic.ListView):
+    model = models.Hold
+    form_class = forms.HoldForm
+
+
+class HoldCreateView(generic.CreateView):
+    model = models.Hold
+    form_class = forms.HoldForm
+
+
+class HoldDetailView(generic.DetailView):
+    model = models.Hold
+    form_class = forms.HoldForm
+
+
+class HoldUpdateView(generic.UpdateView):
+    model = models.Hold
+    form_class = forms.HoldForm
+    pk_url_kwarg = "pk"
+
+
+class HoldDeleteView(generic.DeleteView):
+    model = models.Hold
+    success_url = reverse_lazy("Poster_Hold_list")
+
 
 
 def by_post(request, opgave_id):
@@ -74,14 +99,14 @@ def by_post(request, opgave_id):
 
 def by_bruger(request, bruger_id):
     try:
-        bruger = Bruger.objects.get(pk=bruger_id)
-        godkendelser = models.Godkendelse.objects.filter(Hold=bruger)
+        hold = models.Hold.objects.get(pk=bruger_id)
+        godkendelser = models.Godkendelse.objects.filter(Hold=hold)
 
         # Specify the template name
         template_name = 'Poster/godkendelse_by_bruger.html'
 
         # Render the template with the context data
-        return render(request, template_name, {'godkendelser': godkendelser, 'bruger': bruger})
+        return render(request, template_name, {'godkendelser': godkendelser, 'hold': hold})
 
     except Bruger.DoesNotExist:
         return HttpResponse("Bruger not found")

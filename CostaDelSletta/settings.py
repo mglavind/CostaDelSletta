@@ -34,13 +34,13 @@ ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(" ")
 # Application definition
 
 INSTALLED_APPS = [
+    'Organization',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Organization',
     'Poster',
 ]
 
@@ -87,11 +87,10 @@ AUTH_USER_MODEL = 'Organization.Bruger'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        # Feel free to alter this value to suit your needs.
-        default='postgresql://postgres:postgres@localhost:5432/mysite',
-        conn_max_age=600
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 database_url = os.environ.get("DATABASE_URL")
@@ -127,7 +126,7 @@ USE_L10N = True
 USE_I18N = True
 USE_TZ = True
 
-
+STATIC_URL = '/static/'
 # Following settings only make sense on production and may break development environments.
 if not DEBUG:
     # Tell Django to copy statics to the `staticfiles` directory
