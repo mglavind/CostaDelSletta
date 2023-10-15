@@ -27,3 +27,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
+
+from django.contrib import admin
+# Configure Admin Titles
+admin.site.site_header = "Costa Del Sletta - Immigration"
+admin.site.site_title = "Immigrationscenteret"
+admin.site.index_title = "Costa Del Sletta"
+
