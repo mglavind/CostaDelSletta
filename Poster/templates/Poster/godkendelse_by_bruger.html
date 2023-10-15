@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 <h2>Godkendelser for {{ hold }}</h2>
+<p> 
+  Herunder kan i se status på jeres godkendelser. Opdater siden for at hente nyeste godkendelser.
+  </p>
 <ul>
     <table class="table">
       <tr>
@@ -14,6 +17,16 @@
       </tr>
       {% endfor %}
   </table>
-
 </ul>
+
+<h3>Tidsplan</h3>
+<p> 
+Immigrationsmyndighederne åbner kl. 16.00
+</p>
+<p> 
+  Når godkendelserne fra Ministerie A til og med Q er godkendt, må i gå til Post Ø - Biosecurity. 
+</p>
+<p> 
+Vær opmærksom på at det ikke er tilladt at tage madvarer med gennem biosecurity. Spis derfor aftensmad samlet med din gruppe (alle fire hold) inden.
+</p>
 {% endblock %}
